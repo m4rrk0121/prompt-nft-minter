@@ -1,0 +1,64 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
+
+contract PromptNFTEditions is ERC1155, Ownable {
+    using Strings for uint256;
+    
+    // Counter for token types
+    uint256 private _tokenIdCounter;
+    
+    // Mapping from token ID to metadata URI
+    mapping(uint256 => string) private _tokenURIs;
+    
+    // Mapping from token ID to prompt
+    mapping(uint256 => string) public tokenPrompts;
+    
+    // Event emitted when new edition is created
+    event EditionCreated(uint256 tokenId, uint256 amount, string prompt, string tokenURI);
+    
+    constructor() ERC1155("") Ownable(msg.sender) {}
+    
+    /**
+     * @dev Creates a new edition of NFTs
+     * @param recipient Address that will receive the NFTs
+     * @param amount Number of copies to mint
+     * @param tokenURI URI pointing to the token metadata on IPFS
+     * @param prompt The prompt associated with this NFT
+     * @return The ID of the newly created token type
+     */
+    function createEdition(
+        address recipient,
+        uint256 amount,
+        string memory tokenURI,
+        string memory prompt
+    ) public onlyOwner returns (uint256) {
+        uint256 newTokenId = _tokenIdCounter++;
+        
+        _mint(recipient, newTokenId, amount, "");
+        
+        _tokenURIs[newTokenId] = tokenURI;
+        tokenPrompts[newTokenId] = prompt;
+        
+        emit EditionCreated(newTokenId, amount, prompt, tokenURI);
+        
+        return newTokenId;
+    }
+    
+    /**
+     * @dev Returns the URI for a token ID
+     */
+    function uri(uint256 tokenId) public view override returns (string memory) {
+        return _tokenURIs[tokenId];
+    }
+    
+    /**
+     * @dev Gets the prompt used for a token ID
+     */
+    function getPromptForToken(uint256 tokenId) public view returns (string memory) {
+        return tokenPrompts[tokenId];
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "contractAddress": "0x07f6B926Ecb7cB8d2908928db7b66B53cEa7745B",
+  "owner": "0x9724d68B8a6EA37db8B81e9cD0dE6e5ce1f6D0bB",
+  "tokenId": 1,
+  "tokenURI": "ipfs://Qmf5r4U9eJeYPNAknXTFJ3kAxujctBxcVY9BukNTKq9p29",
+  "imageIpfsHash": "QmVEmJpj6XF3WYetoFDAkT3mgNn44bXbqWp6gpPQw4rshx",
+  "metadataIpfsHash": "Qmf5r4U9eJeYPNAknXTFJ3kAxujctBxcVY9BukNTKq9p29",
+  "name": "King of Apes - CA 2nd Mint",
+  "description": "King of Apes - Mint to test lest NFTS",
+  "originalImagePath": "C:\\Users\\m4rrk\\prompt-nft-minter\\Teaser1.png",
+  "imageUrl": "https://gateway.pinata.cloud/ipfs/QmVEmJpj6XF3WYetoFDAkT3mgNn44bXbqWp6gpPQw4rshx",
+  "metadataUrl": "https://gateway.pinata.cloud/ipfs/Qmf5r4U9eJeYPNAknXTFJ3kAxujctBxcVY9BukNTKq9p29",
+  "editionSize": 250,
+  "mintTime": "2025-03-08T10:08:03.197Z",
+  "transactionHash": "0x3ae5bd6f850773a2c4e72f5d45e4db4012d796f0ec33ffb54bfb8a89a4d863e1",
+  "blockNumber": 27319568,
+  "network": "base-mainnet"
+}

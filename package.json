@@ -1,0 +1,43 @@
+{
+  "name": "prompt-nft-minter",
+  "version": "1.0.0",
+  "description": "NFT minting tool for prompt-based images",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:goerli": "hardhat run scripts/deploy.js --network goerli",
+    "deploy:mainnet": "hardhat run scripts/deploy.js --network mainnet",
+    "deploy:base": "hardhat run scripts/deploy.js --network base-mainnet",
+    "deploy:base-sepolia": "hardhat run scripts/deploy.js --network base-sepolia",
+    "mint": "node scripts/mintNFT.js",
+    "batch-mint": "node scripts/batchMint.js"
+  },
+  "keywords": [
+    "nft",
+    "ethereum",
+    "blockchain",
+    "pinata",
+    "ipfs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.2.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "form-data": "^4.0.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@nomicfoundation/hardhat-verify": "^1.0.0",
+    "chai": "^4.3.7",
+    "ethers": "^6.6.0",
+    "hardhat": "^2.17.0"
+  }
+}
